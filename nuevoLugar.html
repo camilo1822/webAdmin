@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head id="principal">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/funciones.js"></script>
+	<title>Nuevo Lugar</title>
+
+	<body>
+		<div>
+			<div>Titulo: <input type="text" id="titulo"></div>
+			<div>Descripcion: <input type="text" id="descripcion"></div>
+			<div>Imagen: <input type="text" id="imagen"></div>
+			<div>Direccion: <input type="text" id="direccion"></div>
+			<div>Tipo: <select id="tipo">
+			  <option value="estatua">estatua</option>
+			  <option value="parque">parque</option>
+			  <option value="mural">mural</option>
+			  <option value="edificacion">edificacion</option>
+			</select></div>
+		</div>
+		<input type="button" name="agregar" value="agregar" onclick="agregarLugar()">
+	</body>
+		
+</html>
