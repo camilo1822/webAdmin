@@ -4,22 +4,37 @@
 <head id="principal">
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/funciones.js"></script>
+	<link rel="stylesheet" href="css/styles.css" type="text/css"/>
 	<title>Nuevo Lugar</title>
 
 	<body>
-		<div>
-			<div>Titulo: <input type="text" id="titulo"></div>
-			<div>Descripcion: <input type="text" id="descripcion"></div>
-			<div>Imagen: <input type="text" id="imagen"></div>
-			<div>Direccion: <input type="text" id="direccion"></div>
-			<div>Tipo: <select id="tipo">
+	<h1 id="encabezado">Agregar nuevo lugar</h1>
+	<div>
+		<div id="titulos">
+			<div id="elementoAgregarIzq">Titulo:</div>
+			<div id="elementoAgregarIzq">Descripcion:</div>
+			<div id="elementoAgregarIzq">Imagen:</div>
+			<div id="elementoAgregarIzq">Direccion:</div>
+			<div id="elementoAgregarIzq">Latitud:</div>
+			<div id="elementoAgregarIzq">Longitud:</div>
+			<div id="elementoAgregarIzq">Tipo:</div>
+		</div>
+		<div id="contenido">
+			<div id="elementoAgregar"><input type="text" id="titulo"></div>
+			<div id="elementoAgregar"><input type="text" id="descripcion"></div>
+			<div id="elementoAgregar"><input type="text" id="imagen"></div>
+			<div id="elementoAgregar"><input type="text" id="direccion"></div>
+			<div id="elementoAgregar"><input type="text" id="lat"></div>
+			<div id="elementoAgregar"><input type="text" id="lon"></div>
+			<div id="elementoAgregar"><select id="tipo">
 			  <option value="estatua">estatua</option>
 			  <option value="parque">parque</option>
 			  <option value="mural">mural</option>
 			  <option value="edificacion">edificacion</option>
 			</select></div>
 		</div>
-		<input type="button" name="agregar" value="agregar" onclick="agregarLugar()">
+	</div>
+		<input id="agregar" type="button" name="agregar" value="agregar" onclick="agregarLugar()">
 	</body>
 		
 </html>

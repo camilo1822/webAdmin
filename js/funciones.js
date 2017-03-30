@@ -31,6 +31,10 @@ function agregarLugar(){
     var imagen = __jquery('#imagen').val();
     var direccion = __jquery('#direccion').val();
     var tipo = __jquery('#tipo').val();
+    var lat=__jquery('#lat').val();
+    var lon=__jquery('#lon').val();
+    lat = parseFloat(lat);
+    lon = parseFloat(lon);
     __jquery.ajax({
         type: "post",
         method : 'post',
@@ -39,8 +43,8 @@ function agregarLugar(){
             title:titulo,
             image:imagen,
             description:descripcion,
-            latitud:5,
-            longitud:5,
+            latitud:lat,
+            longitud:lon,
             qr:'hola',
             direccion:direccion,
             tipo:tipo

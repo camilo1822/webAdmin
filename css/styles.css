@@ -1,0 +1,35 @@
+#elementoAgregarIzq {
+    margin-left: 80%;
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+#elementoAgregar {
+    margin-right: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#titulos{
+	width: 45%;
+	display: inline-block;
+}
+
+#contenido{
+	width: 45%;
+	display: inline-block;
+}
+
+#agregar{
+	margin-left: 50%;
+    margin-top: 30px;
+}
+
+#encabezado{
+	margin-left: 36%;
+}
+
+.lugar {
+    border-style: groove;
+    margin-bottom: 5px;
+}
