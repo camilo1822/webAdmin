@@ -4,9 +4,17 @@ __jquery(document).ready(function() {
 });
 
 function onReadyPortal(__jquery) {
-	 if (__jquery("#principal").length) {
-           
+	 if (__jquery("#logiando").length) {
+        var user = localStorage.getItem("usuario");
+        var correo = localStorage.getItem("correo");
+        if(localStorage.getItem("correo")==null){
+            __jquery("#myModal").modal();
+            escape();
+        }else{
+            __jquery("#bodyLogin").css("display","none");
+         } 
         }
+
 }
 
 function listarLugares(){
@@ -16,13 +24,22 @@ function listarLugares(){
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(data){
-            console.log(data[1]);
            for(var i = 1; i < data.length;i++){
                     var ht = "<div class=\"lugar\" onclick=\"verLugar()\"><div>"+data[i].title+"</div><div>"+data[i].description+"</div></div>"
                     __jquery( ".listaLugares" ).append(ht);
                 }
         }
     });
+}
+
+function escape(){
+    __jquery('.inputLogin').on('keyup keypress keydown', function(e) {
+        var keyCode = e.keyCode || e.which;
+        if (keyCode === 27) {
+            e.preventDefault();
+            return false;
+        }
+    }); 
 }
 
 function agregarLugar(){
@@ -50,4 +67,21 @@ function agregarLugar(){
             tipo:tipo
            }
     });
+}
+
+var verificarDatos = function() {
+    var nombre = __jquery("#usrname").val();
+    var pass = __jquery("#psw").val();
+    if((nombre=='admin')&&(pass=='admin')){
+        localStorage.setItem("correo","admin");
+        localStorage.setItem("usuario","admin");
+        __jquery("#myModal").modal('toggle');
+    }else{
+        __jquery("#verifiDatos").css("display","block");
+    }         
+}
+
+function logout(){
+    localStorage.clear();
+    location.reload();
 }

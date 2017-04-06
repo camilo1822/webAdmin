@@ -4,10 +4,21 @@
 <head id="principal">
 	<script src="js/jquery-1.11.3.min.js"></script>
 	<script src="js/funciones.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
 	<link rel="stylesheet" href="css/styles.css" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap1.css">
 	<title>Nuevo Lugar</title>
 
-	<body>
+	<body id="logiando">
+	<ul>
+		<li id="listaDos">
+			<a href="index.html">Página Principal</a> 
+		</li>
+		<li  id="listaDos" onclick="logout()">
+			<a href="#">Logout</a> 
+		</li>
+	</ul>
 	<h1 id="encabezado">Agregar nuevo lugar</h1>
 	<div>
 		<div id="titulos">
@@ -35,6 +46,35 @@
 		</div>
 	</div>
 		<input id="agregar" type="button" name="agregar" value="agregar" onclick="agregarLugar()">
+
+		<!-- Modal Login-->
+	  <div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header headerLogin" style="padding:35px 50px;">
+	          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+	        </div>
+	        <div class="modal-body bodyLogin" id="bodyLogin" style="padding:40px 50px;">
+	          <form role="form">	        
+	            <div class="form-group">
+	              <label for="usrname" class="labelLogin"><span class="glyphicon glyphicon-user"></span> Usuario:</label>
+	              <input type="text" class="form-control inputLogin" id="usrname">
+	            </div>
+	            <div class="form-group">
+	              <label for="psw" class="labelLogin"><span class="glyphicon glyphicon-eye-open"></span> Password:</label>
+	              <input type="password" class="form-control inputLogin" id="psw">
+	              <p id="verifiDatos" class="obligatorio" Style="display:none">Verifique sus datos</p>
+	              <!-- <input type="text" class="form-control inputLogin" id="psw" placeholder="Enter password"> -->
+	            </div>
+	              <button type="submit" class="btn btn-success btn-block" onclick="verificarDatos()"><span class="glyphicon glyphicon-off"></span> Login</button>
+	          </form>
+	        </div>
+	      </div>
+	      
+	    </div>
+	  </div>
 	</body>
 		
 </html>

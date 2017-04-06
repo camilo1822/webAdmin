@@ -1,7 +1,12 @@
+body{
+    background-color: currentColor;
+}
+
 #elementoAgregarIzq {
     margin-left: 80%;
     margin-top: 10px;
     margin-bottom: 14px;
+    color: aliceblue;
 }
 
 #elementoAgregar {
@@ -27,13 +32,96 @@
 
 #encabezado{
 	margin-left: 36%;
+    color: aliceblue;
 }
 
 .lugar {
     border-style: groove;
     margin-bottom: 5px;
+    border: 1px solid #c7f9ef;
+    background: #3a8fce;
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+    text-shadow: 1px 1px 1px rgba(255,255,255,.9);
+    text-align: center;
 }
 
 #lista{
 	cursor: pointer;
 }
+
+/*estilos modal login*/
+.labelLogin{
+    display: inline-block;
+}
+
+.inputLogin{
+    display: block;
+    width: 100% !important;
+    text-align: center;
+}
+
+.btn-block {
+    margin-left: 35% !important;
+    width: 65px;
+}
+
+.form-group {
+    margin: 15px;
+}
+
+.bodyLogin{
+    padding: 20px 50px !important;
+}
+
+.headerLogin{
+    padding: 5px !important;
+    text-align: center;
+    background-color: #7DC200 !important;
+}
+
+.headerLogin h4{
+    color: #ffffff;
+}
+
+.modal.fade{
+    width: 300px !important;
+}
+/*fin estilos modal login*/
+
+/**estilso menu */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #333333;
+    background: #333333;
+    border-radius: 6px;
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
+    text-shadow: 1px 1px 1px rgba(255,255,255,.9);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#listaDos{
+    width: 50% !important;
+}
+
+li {
+    float: left;
+    width: 33%;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+/*fin estilos menu*/
