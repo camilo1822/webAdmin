@@ -67,6 +67,13 @@ function agregarLugar(){
             tipo:tipo
            }
     });
+    document.getElementById("titulo").value= "";
+    document.getElementById("descripcion").value= "";
+    document.getElementById("imagen").value= "";
+    document.getElementById("direccion").value= "";
+    document.getElementById("tipo").value= "";
+    document.getElementById("lat").value= "";
+    document.getElementById("lon").value= "";
 }
 
 var verificarDatos = function() {
