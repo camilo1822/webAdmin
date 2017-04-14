@@ -24,8 +24,8 @@ function listarLugares(){
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(data){
-           for(var i = 1; i < data.length;i++){
-                    var ht = "<div class=\"lugar\" onclick=\"verLugar()\"><input type=\"button\" id=\"iconLugar\" class=\"iconLugar\" onclick=\"\"/><div>"+data[i].title+"</div><div>"+data[i].description+"</div></div>"
+           for(var i = 0; i < data.length;i++){
+                    var ht = "<div class=\"lugar\"><input type=\"button\" id=\"iconLugar\" class=\"iconLugar\" onclick=\"eliminar(\'"+data[i]._id+"\')\"/><div>"+data[i].title+"</div><div>"+data[i].description+"</div></div>"
                     __jquery( ".listaLugares" ).append(ht);
                 }
         }
@@ -91,4 +91,18 @@ var verificarDatos = function() {
 function logout(){
     localStorage.clear();
     location.reload();
+}
+
+function eliminar(x){
+    var base='https://cultural-api.herokuapp.com/api/Lugares/'+x;
+    __jquery.ajax({
+        type: "delete",
+        method : 'delete',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        url : base,
+        success:  function () {
+             alert("ya");
+        }
+    });
 }
