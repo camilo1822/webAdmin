@@ -25,7 +25,7 @@ function listarLugares(){
         dataType: "json",
         success: function(data){
            for(var i = 1; i < data.length;i++){
-                    var ht = "<div class=\"lugar\" onclick=\"verLugar()\"><div>"+data[i].title+"</div><div>"+data[i].description+"</div></div>"
+                    var ht = "<div class=\"lugar\" onclick=\"verLugar()\"><input type=\"button\" id=\"iconLugar\" class=\"iconLugar\" onclick=\"\"/><div>"+data[i].title+"</div><div>"+data[i].description+"</div></div>"
                     __jquery( ".listaLugares" ).append(ht);
                 }
         }

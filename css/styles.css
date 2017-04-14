@@ -125,3 +125,14 @@ li a:hover {
     background-color: #111111;
 }
 /*fin estilos menu*/
+
+.iconLugar {
+    background: #3a8fce url(../imagenes/papelera.png) no-repeat;
+    background-size: contain;
+    background-position: 0px;
+    width: 4%;
+    height: 7%;
+    border: 0px;
+    float: right;
+    margin-top: 10px;
+}
