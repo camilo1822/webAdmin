@@ -1,3 +1,19 @@
+var ref = new Firebase('https://APICULTURAL.firebaseio.com');
+var auth = new FirebaseSimpleLogin(ref, function(error, user) {
+    if (error) {
+        __jquery("#verifiDatos").css("display","block");
+        console.log('Authentication error: ', error);
+    } else if (user) {
+        console.log('User ' + user.id + ' authenticated via the ' + user.provider + ' provider!');
+        __jquery("#myModal").modal('toggle');
+        __jquery("#todo").css("display","none");
+    } else {
+        console.log("User is logged out.")
+         __jquery("#myModal").modal();
+        escape();
+    }
+});
+
 var __jquery = jQuery.noConflict();
 __jquery(document).ready(function() {
     onReadyPortal(__jquery)
@@ -7,12 +23,12 @@ function onReadyPortal(__jquery) {
 	 if (__jquery("#logiando").length) {
         var user = localStorage.getItem("usuario");
         var correo = localStorage.getItem("correo");
-        if(localStorage.getItem("correo")==null){
+        /*if(localStorage.getItem("correo")==null){
             __jquery("#myModal").modal();
             escape();
         }else{
             __jquery("#bodyLogin").css("display","none");
-         } 
+         } */
         }
         if (__jquery("#detalles").length) {
             var x = obtenerIdUrl("id");
@@ -81,7 +97,7 @@ function agregarLugar(){
 }
 
 var verificarDatos = function() {
-    var nombre = __jquery("#usrname").val();
+   /* var nombre = __jquery("#usrname").val();
     var pass = __jquery("#psw").val();
     if((nombre=='admin')&&(pass=='admin')){
         localStorage.setItem("correo","admin");
@@ -89,12 +105,22 @@ var verificarDatos = function() {
         __jquery("#myModal").modal('toggle');
     }else{
         __jquery("#verifiDatos").css("display","block");
-    }         
+    } */
+    var email = __jquery("#usrname").val();
+    var password = __jquery("#psw").val();
+    auth.login('password', {
+        email: email,
+        password: password
+    });        
 }
 
 function logout(){
-    localStorage.clear();
-    location.reload();
+    /*localStorage.clear();
+    location.reload();*/
+    auth.logout();
+    //location.reload();
+   /* document.getElementById("usrname").value= "";
+    document.getElementById("psw").value= "";*/
 }
 
 function eliminar(x){
