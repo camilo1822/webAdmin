@@ -1,18 +1,5 @@
-var ref = new Firebase('https://APICULTURAL.firebaseio.com');
-var auth = new FirebaseSimpleLogin(ref, function(error, user) {
-    if (error) {
-        __jquery("#verifiDatos").css("display","block");
-        console.log('Authentication error: ', error);
-    } else if (user) {
-        console.log('User ' + user.id + ' authenticated via the ' + user.provider + ' provider!');
-        __jquery("#myModal").modal('toggle');
-        __jquery("#todo").css("display","none");
-    } else {
-        console.log("User is logged out.")
-         __jquery("#myModal").modal();
-        escape();
-    }
-});
+var ref;
+var auth;
 
 var __jquery = jQuery.noConflict();
 __jquery(document).ready(function() {
@@ -21,14 +8,11 @@ __jquery(document).ready(function() {
 
 function onReadyPortal(__jquery) {
 	 if (__jquery("#logiando").length) {
-        var user = localStorage.getItem("usuario");
-        var correo = localStorage.getItem("correo");
-        /*if(localStorage.getItem("correo")==null){
-            __jquery("#myModal").modal();
-            escape();
+        if(localStorage.getItem("log")==null){
+            firebase();
         }else{
             __jquery("#bodyLogin").css("display","none");
-         } */
+        }
         }
         if (__jquery("#detalles").length) {
             var x = obtenerIdUrl("id");
@@ -97,15 +81,6 @@ function agregarLugar(){
 }
 
 var verificarDatos = function() {
-   /* var nombre = __jquery("#usrname").val();
-    var pass = __jquery("#psw").val();
-    if((nombre=='admin')&&(pass=='admin')){
-        localStorage.setItem("correo","admin");
-        localStorage.setItem("usuario","admin");
-        __jquery("#myModal").modal('toggle');
-    }else{
-        __jquery("#verifiDatos").css("display","block");
-    } */
     var email = __jquery("#usrname").val();
     var password = __jquery("#psw").val();
     auth.login('password', {
@@ -117,8 +92,10 @@ var verificarDatos = function() {
 function logout(){
     /*localStorage.clear();
     location.reload();*/
+    firebase();
     auth.logout();
-    //location.reload();
+    localStorage.clear();
+    location.reload();
    /* document.getElementById("usrname").value= "";
     document.getElementById("psw").value= "";*/
 }
@@ -177,4 +154,32 @@ function lugar(x){
              __jquery( "#botonLg" ).append("<input type=\"button\" value=\"Eliminar\" onclick=\"eliminar1(\'"+data._id+"\')\"/>");
         }
     });
+}
+
+function firebase(){
+    ref = new Firebase('https://APICULTURAL.firebaseio.com');
+    auth = new FirebaseSimpleLogin(ref, function(error, user) {
+    if (error) {
+        __jquery("#verifiDatos").css("display","block");
+        console.log('Authentication error: ', error);
+    } else if (user) {
+       __jquery("#myModal").modal('toggle');
+        console.log('User ' + user.id + ' authenticated via the ' + user.provider + ' provider!');
+        localStorage.setItem("log","admin");
+        //setTimeout(quitarLogin, 1000);
+            } else {
+        console.log("User is logged out.")
+         __jquery("#myModal").modal();
+          __jquery("#bodyLogin").css("display","block");
+        escape();
+    }
+    });
+}
+
+function quitarLogin(){
+    __jquery("#myModal").modal('toggle');
+   // __jquery("#todo").css("display","none");
+    //__jquery("#modal-content").attr("style","display: none !important");
+   /* __jquery("#myModal").modal('toggle');*/
+   //__jquery("#bodyLogin").css("display","none");
 }
