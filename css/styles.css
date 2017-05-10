@@ -1,12 +1,12 @@
 body{
-    background-color: currentColor;
+    background-color: #f0f3f6;
 }
 
 #elementoAgregarIzq {
     margin-left: 80%;
     margin-top: 10px;
     margin-bottom: 14px;
-    color: aliceblue;
+    color: #717a8f;
 }
 
 #elementoAgregar {
@@ -26,13 +26,24 @@ body{
 }
 
 #agregar{
-	margin-left: 50%;
+	margin-left: 40%;
     margin-top: 30px;
+    width: 20%;
+    background-color: #13bd1c;
+    height: 45px;
+    font-size: 21px;
+    font-family: Verdana,Helvetica;
+    font-weight: bold;
+    color: white;
+}
+
+#agregar:hover{
+    background-color: #129a19;
 }
 
 #encabezado{
 	margin-left: 36%;
-    color: aliceblue;
+    color: #717a8f;
 }
 
 .lugar {
@@ -95,8 +106,8 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #333333;
-    background: #333333;
+    border: 1px solid #1f10c5;
+    background: #4750b5;
     border-radius: 6px;
     box-shadow: inset 3px 3px 3px rgba(255,255,255,.7), inset -2px -2px 3px rgba(0,0,0,.1), 2px 2px 10px rgba(0,0,0,.1);
     text-shadow: 1px 1px 1px rgba(255,255,255,.9);
@@ -122,7 +133,7 @@ li a {
 }
 
 li a:hover {
-    background-color: #111111;
+    background-color: #131e92;
 }
 /*fin estilos menu*/
 
@@ -138,5 +149,47 @@ li a:hover {
 }
 
 .Lg{
+    color: #717a8f;
+}
+
+.Lg1{
+    color: #1b2333;
+}
+
+#imgLg{
+    width: 90%;
+    margin: 5%;
+}
+
+#imagenLg{
+    width: 50%;
+    float:left;
+}
+
+.derecha{
+    width: 50%;
+    float:right;
+}
+
+#btnLg{
+    width: 80%;
+    margin: 5%;
+    background-color: red;
+    height: 45px;
+    font-size: 21px;
+    font-family: Verdana,Helvetica;
+    font-weight: bold;
     color: white;
+}
+
+#btnLg:hover{
+   background-color: #ce0f0f; 
+}
+
+.divTi{
+    text-align: center;
+}
+
+#desDiv{
+    margin-top: 5%;
 }

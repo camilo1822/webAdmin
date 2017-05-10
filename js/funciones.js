@@ -151,7 +151,8 @@ function lugar(x){
             __jquery( "#tituloLg" ).text(data.title);
             __jquery( "#descripcionLg" ).text(data.description);
             __jquery( "#imagenLg" ).append("<img id=\"imgLg\" src=\""+data.image+"\" />");
-             __jquery( "#botonLg" ).append("<input type=\"button\" value=\"Eliminar\" onclick=\"eliminar1(\'"+data._id+"\')\"/>");
+            __jquery( "#direccionLg" ).text(data.direccion);
+             __jquery( "#botonLg" ).append("<input id=\"btnLg\" type=\"button\" value=\"Eliminar\" onclick=\"eliminar1(\'"+data._id+"\')\"/>");
         }
     });
 }
