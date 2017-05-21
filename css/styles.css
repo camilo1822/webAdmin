@@ -1,5 +1,6 @@
 body{
-    background-color: #f0f3f6;
+    background-image: url(fondo.jpg);
+    background-size: 1500px 1200px;
 }
 
 #elementoAgregarIzq {
@@ -28,8 +29,8 @@ body{
 #agregar{
 	margin-left: 40%;
     margin-top: 30px;
-    width: 20%;
-    background-color: #13bd1c;
+    width: 10%;
+    background-color: #2EF273;
     height: 45px;
     font-size: 21px;
     font-family: Verdana,Helvetica;
@@ -141,7 +142,7 @@ li a:hover {
     background: #3a8fce url(../imagenes/papelera.png) no-repeat;
     background-size: contain;
     background-position: 0px;
-    width: 4%;
+    width: 2%;
     height: 7%;
     border: 0px;
     float: right;
@@ -172,7 +173,7 @@ li a:hover {
 }
 
 #btnLg{
-    width: 80%;
+    width: 30%;
     margin: 5%;
     background-color: red;
     height: 45px;
