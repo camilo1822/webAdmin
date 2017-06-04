@@ -1,4 +1,8 @@
 body{
+    background-color: #f0f3f6;
+}
+
+.bodyPrincipal{
     background-image: url(fondo.jpg);
     background-size: 1500px 1200px;
 }
